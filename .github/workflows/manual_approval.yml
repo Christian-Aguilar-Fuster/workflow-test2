@@ -1,0 +1,24 @@
+name: Pipeline
+
+on:
+  workflow_dispatch:
+  
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read # This is required for actions/checkout
+  issues: write
+jobs:
+  deploy-prod:
+    runs-on: ubuntu-latest
+    # Configure GitHub Action Environment to have a manual approval step before deployment to production
+    # https://docs.github.com/en/actions/reference/environments
+    # environment: <configured-environment>
+    steps:
+      - name: Await Manual Approval
+        uses: trstringer/manual-approval@v1
+        with:
+          secret: ${{ github.TOKEN }}
+          approvers: Christian-Aguilar-Fuster # Replace with GitHub usernames, with the free version you can only have an issue assigned to one username
+          minimum-approvals: 1
+          issue-title: "Manual Approval Required for changeset Apply"
+          issue-body: "Please approve or deny the deployment."
