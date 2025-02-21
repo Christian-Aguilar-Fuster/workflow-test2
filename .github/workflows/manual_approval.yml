@@ -15,7 +15,7 @@ jobs:
     # environment: <configured-environment>
     steps:
       - name: Await Manual Approval
-        uses: trstringer/manual-approval@v1
+        uses: trstringer/manual-approval@v1.9.1
         with:
           secret: ${{ github.TOKEN }}
           approvers: Christian-Aguilar-Fuster # Replace with GitHub usernames, with the free version you can only have an issue assigned to one username
