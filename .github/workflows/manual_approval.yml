@@ -9,6 +9,8 @@ permissions:
   issues: write
 jobs:
   deploy-prod:
+    permissions:
+      issues: write
     runs-on: ubuntu-latest
     # Configure GitHub Action Environment to have a manual approval step before deployment to production
     # https://docs.github.com/en/actions/reference/environments
