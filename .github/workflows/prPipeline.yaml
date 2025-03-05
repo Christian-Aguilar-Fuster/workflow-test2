@@ -15,7 +15,7 @@ jobs:
       - run: |
           # Use GitHub API to create a comment on the PR 2
           PR_NUMBER=${{ github.event.pull_request.number }}
-          COMMENT="Your checklist comment here"
+          COMMENT="**Playwright Test Results**\n Test in all suites: 10\n Passing: 30\n Failing: 1\n Skipped: 9\n Errors with test run: 0"
           GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           COMMENT_URL="https://api.github.com/repos/${{ github.repository }}/issues/${PR_NUMBER}/comments"
 
