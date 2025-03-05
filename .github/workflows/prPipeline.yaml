@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          # Use GitHub API to create a comment on the PR
+          # Use GitHub API to create a comment on the PR 2
           PR_NUMBER=${{ github.event.pull_request.number }}
           COMMENT="Your checklist comment here"
           GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
