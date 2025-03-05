@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          # Use GitHub API to create a comment on the PR 1
+          # Use GitHub API to create a comment on the PR 1 add a coment
           PR_NUMBER=${{ github.event.pull_request.number }}
           COMMENT=" ✅ **Playwright Test Results All tests passed!**\n **Test in all suites: 10**\n Passing: 30\n Failing: 0\n Skipped: 9\n Errors with test run: 0"
           GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
